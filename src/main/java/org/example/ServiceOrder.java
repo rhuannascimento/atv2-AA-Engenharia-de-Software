@@ -1,6 +1,8 @@
 package org.example;
 
-public class ServiceOrder {
+import java.util.Observable;
+
+public class ServiceOrder extends Observable {
     private ServiceOrderState state;
 
     public ServiceOrder() {
@@ -9,6 +11,12 @@ public class ServiceOrder {
 
     public void setState(ServiceOrderState state) {
         this.state = state;
+        setChanged();
+        notifyObservers();
+    }
+
+    public String toString() {
+        return "Ticket{" + "Estado=" + state + '}';
     }
 
     public boolean create() {
