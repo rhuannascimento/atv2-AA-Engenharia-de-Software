@@ -13,6 +13,10 @@ public class User implements Observer {
 
     @Override
     public void update(Observable serviceOrder, Object arg) {
-        this.lastNotification = ", nota lançada na " + serviceOrder.toString();
+        this.lastNotification = serviceOrder.toString();
+    }
+
+    public String getLastNotification() {
+        return this.lastNotification;
     }
 }

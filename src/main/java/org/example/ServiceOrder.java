@@ -16,7 +16,7 @@ public class ServiceOrder extends Observable {
     }
 
     public String toString() {
-        return "Ticket{" + "Estado=" + state + '}';
+        return "Ticket{" + "Estado=" + state.getState() + '}';
     }
 
     public boolean create() {
